@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Inter:wght@400;700&family=Mulish:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo__container {
+    margin: 65px 153px 58px 122px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    color: #89C5CC;
+}
+
+.nav__list {
+    display: flex;
+    gap: 48px;
+}
+
+.nav__item {
+
+}
+
+.nav__link {
+    font-family: 'Mulish';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #1F1534;
+    opacity: 0.5;
+    
+}
+
+.nav__link--active, .nav__link:hover {
+    font-weight: 700;
+    opacity: 1;
+}
+
+.main__content {
+
+}
+
+.main__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 153px 0px 122px;
+    align-items: center;
+}
+
+.main__container-left {
+    width: 489px;
+}
+
+.main__container-left-title {
+    font-family: 'Mulish';
+    font-weight: 400;
+    font-size: 49px;
+    line-height: 56px;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.main__container-left-title--color {
+    font-weight: 700;
+    color: #89C5CC;
+    
+}
+
+.main__container-left-text {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    color: #7D7987;
+    margin-bottom: 40px;
+}
+
+.main__container-left-cta {
+    background: #69B99D;
+    border-radius: 4px;
+    width: 179px;
+    height: 56px;
+    border: none;
+
+    font-family: 'DM Sans';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #F9F9F9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    transition: all .3s ease-in-out;
+}
+
+.main__container-left-cta:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.main__container-cta {
+    
+}
+
+.main__img-right {
+
+}
+
+.footer {
+    margin-top: 83px;
+    text-align: center;
+}
+
+.footer__text {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.footer__link {
+    color: #000000;
+}
+
+.footer__link:hover {
+    color: #69B99D;
+}
+
+.img-balls__decoration {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
