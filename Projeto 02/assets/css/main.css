@@ -14,10 +14,15 @@ a {
     text-decoration: none;
 }
 
+.page__container {
+    width: 1008px;
+    margin: 68px auto 0;
+}
+
 .logo__container {
-    margin: 65px 153px 58px 122px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 58px;
 }
 
 .logo {
@@ -59,7 +64,6 @@ a {
 .main__container {
     display: flex;
     justify-content: space-between;
-    margin: 0px 153px 0px 122px;
     align-items: center;
 }
 
@@ -89,6 +93,7 @@ a {
     line-height: 28px;
     color: #7D7987;
     margin-bottom: 40px;
+    width: 380px;
 }
 
 .main__container-left-cta {
