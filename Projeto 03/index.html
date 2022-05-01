@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/Projeto 03/css/main.css">
+    <title>Formulário - Desafio 03 Explorer</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Crie e compartilhe seu evento.
+        </h1>
+        <h3>
+            O primeiro passo, é preencher esse formulário de inscrição.
+        </h3>
+    </header>
+    <main>
+        <form action="submit">
+            <h2>
+                Informações do Evento
+            </h2>
+            <section>
+                <div class="container-sub">
+                    <label for="" class="title">Título do evento</label>
+                    <span class="sugestions">(mínimo 8 caracteres)</span>
+                    <input type="text" name="title" id="title">
+                </div>
+                <div class="container-sub">
+                    <label for="" class="title">Link do evento</label>
+                    <span class="sugestions">(comece com https://)</span>
+                    <input type="text" name="title" id="link">
+                </div>
+                <div class="container-sub">
+                    <label for="" class="title">Whatsapp para contato</label>
+                    <span class="sugestions">(somente números)</span>
+                    <input type="text" name="title" id="link">
+                </div>
+                <div class="container-sub">
+                    <label for="" class="title">Informações  extras</label>
+                    <textarea name="extra" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="container-sub">
+                    <label for="Campo para categoria" class="title">Categoria</label>
+                    <select name="category" id="" >
+                        <option disabled value="">Tipo do evento</option>
+                    </select>
+                </div>
+            </section>
+            <section>
+                <h2>
+                    Privacidade
+                </h2>
+                <div class="container-sub">
+                    <label for="" class="title">E-mail do administrador</label>
+                    <span class="sugestions">(digite um email válido)</span>
+                    <input type="email" name="title" id="title">
+                </div>
+                <div class="container-sub">
+                    <label for="email" class="title">Senha de acesso para os participantes</label>
+                    <span class="sugestions">(mínimo 8 caracteres)</span>
+                    <input type="text" name="email" id="email">
+                </div>
+                <div class="container-sub">
+                    <input type="checkbox" name="" id="">
+                    <label for="">Evento Privado</label>
+                </div>
+            </section>
+            <section>
+                <h2>
+                    Dia e hora
+                </h2>
+                <div class="container-date">
+                    <label for="" class="sugestions">Data</label>
+                    <input type="date" name="" id="">
+                </div>
+                <div class="container-init-hour">
+                    <label for="" class="sugestions">Das</label>
+                    <input type="time" name="" id="" placeholder="19:00">
+                </div>
+                <div class="container-end-hour">
+                    <label for="" class="sugestions">Até</label>
+                    <input type="time" name="" id="" placeholder="20:00">
+                </div>
+            </section>
+            <div class="container__button-submit">
+                <button type="submit">Salvar evento</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
