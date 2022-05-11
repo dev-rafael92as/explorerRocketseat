@@ -5,6 +5,10 @@
     --bg-form: #FFFFFF;
     --bg-body: #E5E5E5;
     --bg-buttom: #FF5374;
+    --bg-input: #FAFAFC;
+    --fc-default: #4E4958;
+    --fc-borders: #E6E6F0;
+    --fc-span: #C1BCCC;
 
     --ff-staatliches-r: 'Staatliches', cursive;
     --ff-poppins-r: 'Poppins', sans-serif;
@@ -20,4 +24,116 @@
 
 body {
     font-size: 1.6rem;
+    font-family: var(--ff-poppins-r);
+    background-color: var(--bg-body);
+    position: relative;
+}
+
+.page {
+    width: 75rem;
+    margin: 0 auto;
+}
+
+.bg-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 43.6rem;
+    background-color: var(--bg-header);
+    z-index: -1;
+}
+
+header {
+    padding-top: 12.4rem;
+    margin-bottom: 5.8rem;
+}
+
+h1 {
+    font-family: var(--ff-staatliches-r);
+    font-weight: 400;
+    font-size: 4.8rem;
+    line-height: 6.0rem;
+    color: var(--bg-form);
+
+    margin-bottom: 1.8rem;
+}
+
+.page p {
+    display: inline-block;
+    width: 41.7rem;
+    font-weight: 400;
+    font-size: 2.0rem;
+    line-height: 3.0rem;
+    max-height: 4.6rem;
+    color: var(--bg-form);
+}
+
+form {
+    width: 75rem;
+    margin: 0 auto;
+    background-color: var(--bg-form);
+    border-radius: 2rem 2rem 0 0;
+    padding: 6.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+fieldset {
+    border: none;
+}
+
+form fieldset:nth-child(1) legend{
+    padding-bottom: 1.6rem;
+}
+
+legend {
+    font-family: var(--ff-staatliches-r);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+    color: var(--bg-header);
+    display: inline;
+    width: 100%;
+    border-bottom: 1px solid var(--fc-borders);
+    padding-bottom: 8px;
+    margin-bottom: 3.6rem;
+}
+
+.container-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+label {
+    display: block;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--fc-default);
+    margin-bottom: 8px;
+}
+
+span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--fc-span);
+    margin-left: 6px;
+}
+
+input {
+    background-color: var(--bg-input);
+    border: 1px solid var(--fc-borders);
+    border-radius: 8px;
+    height: 5.6rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+fieldset input:last-child {
+    margin-bottom: 0;
 }
