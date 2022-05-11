@@ -71,7 +71,7 @@ header h1 {
     line-height: 4.8rem;
     color: var(--color-txt-white);
 
-    margin-top: 2.3rem;
+    margin-top: 10px;
 }
 
 img {
@@ -79,6 +79,9 @@ img {
     height: 41.6rem;
     border-radius: 6px;
     object-fit: cover;
+    filter: brightness(0.5);
+    z-index: -1;
+    
 }
 
 .cards {
@@ -87,6 +90,14 @@ img {
     align-items: center;
     margin-bottom: 3.2rem;
     position: relative;
+
+    transition: all .3s ease-in-out;
+}
+
+.cards:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+    
 }
 
 .cards-text {
@@ -95,7 +106,83 @@ img {
     left: 2.1rem;
 }
 
+img:hover {
+    filter: none;
+    transition: all .3s ease-in-out;
+}
+
 .page {
     margin: 10.6rem auto;
     max-width: 32.9rem;
 }
+
+header {
+    animation: topdown .3s .1s forwards;
+}
+
+main {
+    animation: downtop .3s .1s backwards;
+}
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px) rotate(360deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 700px) {
+    .page {
+        max-width: 117.0rem;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin: 0 3rem;
+    }
+    .cards {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1000px) {
+    main {
+        display: grid;
+        grid-template-areas: "A A A A B B B B B B"
+        "C C C C C C D D D D";   
+        
+    }
+
+    main div:nth-child(1) {
+        grid-area: A;
+    }
+    main div:nth-child(2) {
+        grid-area: B;
+    }
+    main div:nth-child(3) {
+        grid-area: C;
+    }
+    main div:nth-child(4) {
+        grid-area: D;
+    }
+}
+
