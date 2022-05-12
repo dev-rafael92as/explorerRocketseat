@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin&family=Staatliches&display=swap');
+
+:root {
+    --bg-header: #8E9AAF;
+    --bg-logo: #CBC0D3;
+    --bg-body: #EFF1FF;
+    --bg-tag: #FEEAFA;
+    --fc-text: #23053A;
+    --fc-logo: #FFFFFF;
+    --fc-tag: #4A4E69;
+
+    --ff-palanquin:'Palanquin', sans-serif;
+    --ff-staatliches:'Staatliches', cursive;
+
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--ff-staatliches);
+}
+
+.page {
+    width: 38.4rem;
+    margin: 0 auto;
+    background-color: var(--bg-body);
+    padding-bottom: 6rem;
+}
+
+header {
+    text-align: center;
+    height: 27.9rem;
+    background-color: var(--bg-header);
+    padding: 3.2rem 8.6rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+header img {
+    margin-bottom: 3.2rem;
+    width: 13.7rem;
+    height: 13.7rem;
+}
+
+header h1 {
+    font-weight: 400;
+    font-size: 4.0rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+    color: var(--fc-logo);
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.bg-logo {
+    position: absolute;
+    left: 0;
+    top: 200px;
+    width: 100%;
+    height: 4.9rem;
+    background-color: var(--bg-logo);
+    z-index: -1;
+}
+
+main {
+    width: 32rem;
+    margin: 1.4rem auto 0;
+}
+
+main p {
+    font-family: var(--ff-palanquin);
+    font-weight: 400;
+    font-size: 2.0rem;
+    line-height: 1.5rem;
+    margin: 0 auto 6.3rem;
+    text-align: center;
+    width: 30.5rem;
+    color: var(--fc-text);
+
+    
+}
+
+.cards {
+    position: relative;
+    margin-bottom: 3.6rem;
+}
+
+.cards span {
+    position: absolute;
+    right: 1.6rem;
+    top: 1.6rem;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 34px;  
+    letter-spacing: 0.05em;
+    color: var(--fc-tag);
+    padding: 0 2.4rem;
+    border-radius: 20px;
+    background-color: var(--bg-tag);
+    z-index: +3;
+
+    animation: topToDown .7s ease-in-out;
+}
+
+.cards img {
+    animation: downToTop .7s ease-in-out;
+}
+
+@keyframes downToTop {
+    from {
+        opacity: 0;
+        transform: translateY(+15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes topToDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
