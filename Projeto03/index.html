@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Formulário - Desafio 03 Explorer</title>
+</head>
+<body>
+    <div class="black-bg"></div>
+    <header>
+        <h1>
+            Crie e compartilhe seu evento.
+        </h1>
+        <h3>
+            O primeiro passo, é preencher esse formulário de inscrição.
+        </h3>
+    </header>
+    <main>
+        <form id="form" action="">
+            <fieldset>
+                <legend>
+                    Informações do Evento
+                </legend>
+                <div class="container-sub">
+                    <label for="event-title" class="title">Título do evento <span class="sugestions">(mínimo 8 caracteres)</span></label>
+                    
+                    <input 
+                        type="text" 
+                        name="title" 
+                        id="event-title"
+                        minlength="8"
+                        >
+                </div>
+                <div class="container-sub">
+                    <label for="event-link" class="title">Link do evento <span class="sugestions">(comece com https://)</span></label>
+                    
+                    <input 
+                        type="url" 
+                        name="" 
+                        id="event-link"
+                        >
+                </div>
+                <div class="container-sub">
+                    <label for="event-whatsapp" class="title">Whatsapp para contato <span class="sugestions">(somente números)</span></label>
+                    
+                    <input type="number" name="" id="event-whatsapp">
+                </div>
+                <div class="container-sub">
+                    <label for="" class="title">Informações  extras</label>
+                    <textarea name="extra" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="container-sub">
+                    <label for="Campo para categoria" class="title">Categoria</label>
+                    <select name="category" id="" >
+                        <option disabled value="">Tipo do evento</option>
+                    </select>
+                </div>
+            
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Privacidade
+                </legend>
+                <div class="container-sub">
+                    <label for="event-email" class="title">E-mail do administrador <span class="sugestions">(digite um email válido)</span></label>
+                    <input type="email" name="" id="event-email">
+                </div>
+                <div class="container-sub">
+                    <label for="event-password" class="title">Senha de acesso para os participantes <span class="sugestions">(mínimo 8 caracteres)</span></label>
+                    
+                    <input 
+                        type="password" 
+                        name="" 
+                        id="event-password"
+                        minlength="8">
+                </div>
+                <div class="container-sub checkbox-wrapper">
+                    <input class="checkbox" type="checkbox" name="" id="event-checkbox">
+                    <label for="event-checkbox">Evento Privado</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Dia e hora
+                </legend>
+                <div class="time-content">
+                    <div class="container-date">
+                        <label  for="event-day" class="sugestions">Data</label>
+                        <input type="date" name="" id="event-day">
+                    </div>
+                    <div class="container-init-hour">
+                        <label for="event-time1" class="sugestions">Das</label>
+                        <input type="time" name="" id="event-time1" placeholder="19:00">
+                    </div>
+                    <div class="container-end-hour">
+                        <label for="event-time2" class="sugestions">Até</label>
+                        <input type="time" name="" id="event-time2" placeholder="20:00">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <footer class="container__button-submit">
+            <input 
+                type="submit"
+
+                value="Salvar evento"
+                form="form"/>
+        </footer>
+        
+    </main>
+</body>
+</html>
