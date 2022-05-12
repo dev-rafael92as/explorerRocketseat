@@ -9,10 +9,13 @@
 :root {
     --bg-header: #293241;
     --bg-top: #F67669;
-    --bg-body: #E5E5E5;
+    --bg-body: #BFD7E4;
     --bg-form: #FFFFFF;
+    --bg-input: #FAFAFC;
+    --fc-b-input: #E6E6F0;
     --fc-legend: #253B51;
     --fc-text: #4E4958;
+    --fc-span: #C1BCCC;
 
     --ff-poppins:'Poppins', sans-serif;
     --ff-staatliches:'Staatliches', cursive;
@@ -24,6 +27,7 @@ body {
     font-size: 1.6rem;
     text-align: center;
     font-family: var(--ff-poppins);
+    background-color: var(--bg-body);
 }
 
 .bg-header {
@@ -38,7 +42,7 @@ body {
 
 .page {
     width: 75rem;
-    margin: 0 auto;
+    margin: 0 auto 40rem;
 }
 
 header h1 {
@@ -77,6 +81,110 @@ header p {
     color: var(--bg-form);
 }
 
+form {
+    padding: 3.2rem 6.4rem 6.4rem;
+    background-color: var(--bg-form);
+    border-radius: 0 0 2rem 2rem;
+}
+
 fieldset {
     border: none;
+}
+
+.container-name {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.2rem;
+}
+
+label {
+    display: block;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--fc-text);
+    text-align: start;
+    margin-bottom: 8px;
+}
+
+input, textarea{
+    background-color: var(--bg-input);
+    width: 100%;
+    height: 5.5rem;
+    border: 1px solid var(--fc-b-input);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+span {
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 2.0rem;
+    color: var(--fc-span);
+    margin-left: 9px;
+}
+
+legend {
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+    color: var(--fc-legend);
+    padding-bottom: 8px;
+    width: 100%;
+    margin-bottom: 3.2rem;
+    border-bottom:  1px solid #E6E6F0;
+    text-transform: uppercase;
+    font-family: var(--ff-staatliches);
+}
+
+#event-mentorName {
+    width: 30rem;
+}
+
+textarea {
+    height: 16.7rem;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.6rem;
+}
+
+#event-doubts {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 8px;
+    border: 1px solid #E6E6F0;
+    background-color: #FAFAFC;
+    margin: 0;
+}
+
+.checkbox label {
+    margin: 0 0 0 1rem;
+}
+
+.container-date {
+    display: grid;
+    grid-template-columns: 30rem 29rem;
+    gap: 3.2rem;
+}
+
+.container-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.button {
+    margin: 4.8rem 0 0 0;
+    background-color: var(--bg-top);
+    font-weight: 400;
+    font-size: 2.0rem;
+    line-height: 2.6rem;
+    color: var(--bg-form);
+    font-family: var(--ff-staatliches);
+    padding: 1rem 0;
 }

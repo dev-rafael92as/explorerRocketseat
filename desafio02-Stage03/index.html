@@ -22,12 +22,15 @@
         <form action="">
             <fieldset>
                 <div class="container-name">
-                    <label for="event-name">Nome</label>
-                    <input type="text" name="name" id="event-name">
-
-                    <label for="event-lastName">Sobrenome</label>
-                    <input type="text" name="lastName" id="event-lastName">
-                </div>
+                    <div>
+                        <label for="event-name">Nome</label>
+                        <input type="text" name="name" id="event-name">
+                    </div>
+                    <div>
+                        <label for="event-lastName">Sobrenome</label>
+                        <input type="text" name="lastName" id="event-lastName">
+                    </div>
+                    </div>
                 <label for="event-email">Email<span>(digite um email válido)</span></label>
                 <input type="email" name="email" id="event-email">
             </fieldset>
@@ -39,29 +42,31 @@
 
                 <label for="event-feedback">Feedback sobre o mentor</label>
                 <textarea name="feedback" id="event-feedback"></textarea>
-
-                <input type="checkbox" name="event-doubts" id="event-doubts">
-                <label for="event-doubts">Todas as minhas dúvidas foram esclarecidas durante a mentoria.</label>
+                <div class="checkbox">
+                    <input type="checkbox" name="event-doubts" id="event-doubts">
+                    <label for="event-doubts">Todas as minhas dúvidas foram esclarecidas durante a mentoria.</label>
+                </div>
             </fieldset>
             <fieldset>
                 <legend>Agendando próxima mentoria</legend>
-
-                <div>
-                    <label for="event-date">Data <span>(DD/MM/AAAA)</span></label>
-                    <input type="date" name="date" id="event-date">
-                </div>
-                <div class="container-data">
+                <div class="container-date">
                     <div>
-                        <label for="event-dateFrom">Das</label>
-                        <input type="time" name="dateFrom" id="event-dateFrom">
+                        <label for="event-date">Data <span>(DD/MM/AAAA)</span></label>
+                        <input type="date" name="date" id="event-date">
                     </div>
-                    <div>
-                        <label for="event-dateTo">Até</label>
-                        <input type="time" name="dateTo" id="event-dateTo">
+                    <div class="container-data">
+                        <div>
+                            <label for="event-dateFrom">Das</label>
+                            <input type="time" name="dateFrom" id="event-dateFrom">
+                        </div>
+                        <div>
+                            <label for="event-dateTo">Até</label>
+                            <input type="time" name="dateTo" id="event-dateTo">
+                        </div>
                     </div>
                 </div>
             </fieldset>
-            <input type="submit" value="Salvar">
+            <input class="button" type="submit" value="Salvar">
         </form>
     </div>
 </body>
