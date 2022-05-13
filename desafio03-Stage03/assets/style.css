@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Palanquin&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Palanquin&family=Roboto&family=Staatliches&display=swap');
 
 :root {
     --bg-header: #8E9AAF;
@@ -11,6 +11,8 @@
 
     --ff-palanquin:'Palanquin', sans-serif;
     --ff-staatliches:'Staatliches', cursive;
+    --ff-opensans: 'Open Sans', sans-serif;
+    --ff-roboto: 'Roboto', sans-serif;
 
     font-size: 62.5%;
 }
@@ -40,6 +42,10 @@ header {
     padding: 3.2rem 8.6rem 0;
     position: relative;
     z-index: 2;
+}
+
+aside {
+    display: none;
 }
 
 header img {
@@ -80,17 +86,16 @@ main p {
     margin: 0 auto 6.3rem;
     text-align: center;
     width: 30.5rem;
-    color: var(--fc-text);
-
-    
+    color: var(--fc-text);  
 }
 
-.cards {
+.card1, .card2, .card3,
+.card4, .card5, .card6 {
     position: relative;
     margin-bottom: 3.6rem;
 }
 
-.cards span {
+span {
     position: absolute;
     right: 1.6rem;
     top: 1.6rem;
@@ -107,8 +112,12 @@ main p {
     animation: topToDown .7s ease-in-out;
 }
 
-.cards img {
+img {
     animation: downToTop .7s ease-in-out;
+}
+
+footer {
+    display: none;
 }
 
 @keyframes downToTop {
@@ -132,5 +141,138 @@ main p {
     to {
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+
+
+
+@media (min-width: 900px) {
+    .page {
+        width: 128rem;
+        margin: 0;
+        display: flex;
+        gap: 9.8rem;
+        height: 72rem;
+        padding-bottom: 11.8rem;
+    }
+    
+    .bg-logo {
+        
+        width: 37.7rem;
+        top: 231px;
+        
+    }
+
+    header {
+        text-align: center;
+        width: 47.7rem;
+        height: 72rem;
+        padding: 0;
+    }
+
+    header img {
+        margin-top: 32px;
+        width: 214px;
+        height: 167px;
+        margin-bottom: 34px;
+    }
+
+    aside {
+        margin: 0 auto;
+    }
+
+    aside p {
+        font-family: var(--ff-roboto);
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.0rem;
+        color: var(--fc-logo);
+        width: 275px;
+        margin: 5.2rem auto 0;
+    }
+
+    main {
+        position: relative;
+        width: 903px;
+        margin: 0;
+        padding-top: 6.4rem;
+        padding-right: 8.1rem;
+        display: grid;
+        gap: 3.2rem; 
+        grid-template-areas: "A B C"
+            "D B F"
+            "D E F";  
+    }
+
+    span {
+        display: none;
+    }
+
+    .card1 img, .card3 img, .card5 img {
+        width: 220px;
+        height: 150px;
+    }
+
+    .card2 img, .card4 img, .card6 img {
+        width: 220px;
+        height: 350px;
+    }
+
+    .card1 {
+        grid-area: A;
+        margin: 0;
+    }
+
+    .card2 {
+        grid-area: B;
+        margin: 0;
+    }
+
+    .card3 {
+        grid-area: C;
+        margin: 0;
+    }
+
+    .card4 {
+        grid-area: D;
+        margin: 0;
+    }
+
+    .card5 {
+        grid-area: E;
+        margin: 0;
+    }
+
+    .card6 {
+        grid-area: F;
+        margin: 0;
+    }
+        
+    main p {
+        display: none;
+    }
+
+    aside {
+        display: block;
+    }
+
+    footer {
+        position: absolute;
+        right: 147px;
+        bottom: -60px;
+        font-family: var(--ff-opensans);
+        display: block;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 2.8rem;
+        text-align: center;
+        color: var(--fc-tag);
+        width: 59.2rem;
+    }
+
+    footer a {
+        color: var(--fc-tag);
+        font-weight: 700;
+        text-decoration: none;
     }
 }
