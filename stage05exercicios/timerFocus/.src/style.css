@@ -484,6 +484,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 15rem;
 }
 
+.flex {
+  display: flex;
+}
+
 .bg-default {
   --tw-bg-opacity: 1;
   background-color: rgb(18 18 20 / var(--tw-bg-opacity));
