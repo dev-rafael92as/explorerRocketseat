@@ -13,15 +13,36 @@ let minutes
 let minutesDisplay = document.querySelector('.minuts')
 let secondsDisplay = document.querySelector('.seconds')
 
+function resetControls() {
+    buttonPlay.classList.remove('hide')
+    buttonPause.classList.add('hide')
+    buttonStoping.classList.add('hide')
+    buttonSetting.classList.remove('hide')
+}
+
+function updateTimerDisplay(minutes, seconds) {
+    minutesDisplay.textContent = String(minutes).padStart(2, '0')
+    secondsDisplay.textContent = String(seconds).padStart(2, '0')
+}
+
 function countdown() {
     setTimeout(() => {
         let seconds = Number(secondsDisplay.textContent)
+        let minutes = Number(minutesDisplay.textContent)
 
-        if( seconds <= 0) {
-            seconds = 60
+        updateTimerDisplay(minutes, 0)
+        
+        if (minutes <= 0) {
+            resetControls()
+            return
         }
 
-        secondsDisplay.textContent = seconds - 1
+        if( seconds <= 0) {
+            seconds = 2
+            --minutes
+        }
+
+        updateTimerDisplay(minutes, String(seconds - 1))
 
         countdown()
     }, 1000);
@@ -42,10 +63,7 @@ buttonPause.addEventListener('click', function() {
 })
 
 buttonStoping.addEventListener('click', function() {
-    buttonStoping.classList.add('hide')
-    buttonSetting.classList.remove('hide')
-    buttonPause.classList.add('hide')
-    buttonPlay.classList.remove('hide')
+    resetControls()
 })
 
 buttonStopMusic.addEventListener('click', function() {
@@ -74,6 +92,6 @@ buttonSetting.addEventListener('click', function() {
             alert("Por favor escolha um número válido de 1 a 60 minutos")
             
         } else {
-            minutesDisplay.textContent = minutes
+            updateTimerDisplay(minutes, 0)
         }
 })
