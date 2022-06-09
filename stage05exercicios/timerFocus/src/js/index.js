@@ -1,5 +1,5 @@
 import resetControls from "./controls.js"
-import "./timer.js"
+import { Timer } from "./timer.js"
 
 let buttonPlay = document.querySelector('.startCountdown')
 let buttonPause = document.querySelector('.pauseCountdown')
@@ -12,13 +12,20 @@ let secondsDisplay = document.querySelector('.seconds')
 let minutes = Number(minutesDisplay.textContent)
 let timerTimeOut
 
+const timer = Timer({
+    minutesDisplay,
+    secondsDisplay,
+    timerTimeOut,
+    resetControls,
+})
+
 buttonPlay.addEventListener('click', function() {
     buttonPlay.classList.add('hide')
     buttonPause.classList.remove('hide')
     buttonSetting.classList.add('hide')
     buttonStoping.classList.remove('hide')
 
-    countdown()
+    timer.countdown()
 })
 
 buttonPause.addEventListener('click', function() {
@@ -29,7 +36,7 @@ buttonPause.addEventListener('click', function() {
 
 buttonStoping.addEventListener('click', function() {
     resetControls()
-    resetTimer()
+    timer.resetTimer()
 })
 
 buttonStopMusic.addEventListener('click', function() {
@@ -44,21 +51,24 @@ buttonStartMusic.addEventListener('click', function() {
 
 buttonSetting.addEventListener('click', function() {
         let newMinutes = Number(prompt('Quantos minutos? (Escolha de 1 a 60)'))
-    
-        if (newMinutes > 60) {
-            alert("Por favor escolha um número válido de 1 a 60 minutos")
-            
-        } else if (newMinutes <= 0) {
-            alert("Por favor escolha um número válido de 1 a 60 minutos")
-            
-        } else if (newMinutes === null) {
-            alert("Por favor escolha um número válido de 1 a 60 minutos")
-            
-        } else if (isNaN(newMinutes)) {
-            alert("Por favor escolha um número válido de 1 a 60 minutos")
-            
-        } else {
-            minutes = newMinutes
-            updateTimerDisplay(minutes, 0)
+        if(!newMinutes) {
+            timer.resetTimer()
+            return
         }
+        // if (newMinutes > 60) {
+        //     alert("Por favor escolha um número válido de 1 a 60 minutos")
+            
+        // } else if (newMinutes <= 0) {
+        //     alert("Por favor escolha um número válido de 1 a 60 minutos")
+            
+        // } else if (newMinutes === null) {
+        //     alert("Por favor escolha um número válido de 1 a 60 minutos")
+            
+        // } else if (isNaN(newMinutes)) {
+        //     alert("Por favor escolha um número válido de 1 a 60 minutos")
+            
+        // } else {
+             minutes = newMinutes
+             updateTimerDisplay(minutes, 0)
+        // }
 })
