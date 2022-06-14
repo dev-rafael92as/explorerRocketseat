@@ -1,5 +1,6 @@
-import resetControls from "./controls.js"
+import Controls from "./controls.js"
 import { Timer } from "./timer.js"
+import Sounds from "./sounds.js"
 
 let buttonPlay = document.querySelector('.startCountdown')
 let buttonPause = document.querySelector('.pauseCountdown')
@@ -9,66 +10,60 @@ let buttonStopMusic = document.querySelector('.stopMusic')
 let buttonStartMusic = document.querySelector('.startMusic')
 let minutesDisplay = document.querySelector('.minuts')
 let secondsDisplay = document.querySelector('.seconds')
-let minutes = Number(minutesDisplay.textContent)
-let timerTimeOut
+
+const sound = Sounds()
+
+const controls = Controls({
+    buttonPause,
+    buttonPlay,
+    buttonSetting,
+    buttonStoping
+})
 
 const timer = Timer({
     minutesDisplay,
     secondsDisplay,
-    timerTimeOut,
-    resetControls,
+    resetControls: controls.reset   
 })
 
 buttonPlay.addEventListener('click', function() {
-    buttonPlay.classList.add('hide')
-    buttonPause.classList.remove('hide')
-    buttonSetting.classList.add('hide')
-    buttonStoping.classList.remove('hide')
-
+    controls.play()
     timer.countdown()
+    sound.pressButton()
 })
 
 buttonPause.addEventListener('click', function() {
-    buttonPause.classList.add('hide')
-    buttonPlay.classList.remove('hide')
-    clearTimeout(timerTimeOut)
+    controls.pause()
+    timer.hold()
+    sound.pressButton()
 })
 
 buttonStoping.addEventListener('click', function() {
-    resetControls()
-    timer.resetTimer()
+    controls.reset()
+    timer.reset()
+    sound.pressButton()
 })
 
 buttonStopMusic.addEventListener('click', function() {
     buttonStopMusic.classList.add('hide')
     buttonStartMusic.classList.remove('hide')
+    sound.bgAudio.pause()
 })
 
 buttonStartMusic.addEventListener('click', function() {
     buttonStartMusic.classList.add('hide')
     buttonStopMusic.classList.remove('hide')
+    sound.bgAudio.play()
 })
 
 buttonSetting.addEventListener('click', function() {
-        let newMinutes = Number(prompt('Quantos minutos? (Escolha de 1 a 60)'))
-        if(!newMinutes) {
-            timer.resetTimer()
-            return
-        }
-        // if (newMinutes > 60) {
-        //     alert("Por favor escolha um número válido de 1 a 60 minutos")
-            
-        // } else if (newMinutes <= 0) {
-        //     alert("Por favor escolha um número válido de 1 a 60 minutos")
-            
-        // } else if (newMinutes === null) {
-        //     alert("Por favor escolha um número válido de 1 a 60 minutos")
-            
-        // } else if (isNaN(newMinutes)) {
-        //     alert("Por favor escolha um número válido de 1 a 60 minutos")
-            
-        // } else {
-             minutes = newMinutes
-             updateTimerDisplay(minutes, 0)
-        // }
+    let newMinutes = controls.getMinutes()
+
+    if(!newMinutes) {
+        timer.reset()
+        return
+    }
+
+    timer.updateTimerDisplay(newMinutes, 0)
+    timer.updateMinutes(newMinutes)
 })
