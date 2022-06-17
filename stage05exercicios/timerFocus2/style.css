@@ -17,16 +17,29 @@ body {
     text-align: center;
     justify-content: center;
     margin-top: 19.6rem;
+    align-items: center;
 }
 
 .container-time {
     font-weight: 500;
-    font-size: 126px;
-    line-height: 148px;
+    font-size: 80px;
+    line-height: 80px;
     color: #323238;
 }
 
-.button {
+button {
     border: none;
-    text-decoration: none;
+    background: none;
+    cursor: pointer;
 }
+
+.container-icons-status {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.shop, .three {
+    margin-right: 3.2rem;
+}
+
