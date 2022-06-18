@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root {
+    font-size: 62.5%;
+
+    --base-color-active: 195;
+    --base-color: 20;
+    --base-primary-dark: hsla(var(--base-color), 7%, 78%, 1);
+    --bg-card-dark: hsla(var(--base-color), 6%, 17%, 1);
+    --bg-card-dark-active: hsla(var(--base-color-active), 74%, 15%, 1);
+    --base-primary-dark-active: hsla(0, 0%, 100%, 1)
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.card-active svg path:first-child {
+    fill: var(--bg-card-dark-active) !important;
+}
+
+.card-active svg path:nth-child(4) {
+    fill: var(--base-primary-dark-active) !important;
+}
+
+.buttonThree svg path:first-child,
+.buttonStore svg path:first-child,
+.buttonFire svg path:first-child,
+.buttonCloud svg path:first-child
+{
+    fill: var(--bg-card-dark)
+}
+
+.buttonThree svg path:nth-child(4),
+.buttonStore svg path:nth-child(4),
+.buttonFire svg path:nth-child(4),
+.buttonCloud svg path:nth-child(4) {
+    fill: var(--base-primary-dark)
+}
+
+.dark-mode {
+    background-color: #121214;
+}
+
+.light-mode {
+    background-color: #FFFFFF;
+}
+
+.container-left {
+    text-align: center;
+}
+
+.container-display {
+    font-size: 110px;
+    color: #323238;
+}
+
+.dark-font {
+    color: #FFFFFF;
+}
+
+.hide {
+    display: none;
+}
+
+.mode-container {
+    display: flex;
+    gap: 19.2rem;
+    width: 821px;
+    margin: 19.8rem auto auto;
+    align-items: center;
+}
+
+.dark-mode-button, .light-mode-button {
+    position: absolute;
+    right: 60px;
+    top: 60px;
+}
+
+.icons-top {
+    display: flex;
+    gap: 3.2rem;
+    margin-bottom: 3.2rem;
+}
+
+.icons-down {
+    display: flex;
+    gap: 3.2rem;
+}
+
+.container-icons-display {
+    display: flex;
+    gap: 4rem;
+}
