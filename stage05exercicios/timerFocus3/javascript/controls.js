@@ -13,6 +13,11 @@ export default function Controls({
         buttonCardFireplace.classList.remove('card-active')
         buttonCardForest.classList.remove('card-active')
         buttonCardRain.classList.remove('card-active')
+
+        buttonCardCoffeshop.classList.remove('card-active-light')
+        buttonCardFireplace.classList.remove('card-active-light')
+        buttonCardForest.classList.remove('card-active-light')
+        buttonCardRain.classList.remove('card-active-light')
     }
     // function play() {
     //     buttonPlay.classList.add('hide')

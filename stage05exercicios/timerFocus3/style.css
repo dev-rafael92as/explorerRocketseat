@@ -4,11 +4,16 @@
     font-size: 62.5%;
 
     --base-color-active: 195;
-    --base-color: 20;
+    --base-color: 240;
     --base-primary-dark: hsla(var(--base-color), 7%, 78%, 1);
     --bg-card-dark: hsla(var(--base-color), 6%, 17%, 1);
     --bg-card-dark-active: hsla(var(--base-color-active), 74%, 15%, 1);
-    --base-primary-dark-active: hsla(0, 0%, 100%, 1)
+    --base-primary-dark-active: hsla(0, 0%, 100%, 1);
+
+    --bg-card-light: hsla(var(--base-color), 9%, 89%, 1);
+    --base-primary-light: hsla(var(--base-color), 6%, 21%, 1);
+    --bg-card-light-active: hsla(var(--base-color-active), 97%, 31%, 1);
+    --base-primary-light-active: hsla(var(--base-color-active), 97%, 31%, 1)
 }
 
 body {
@@ -21,6 +26,10 @@ button {
     cursor: pointer;
 }
 
+.buttonContainer {
+    position: relative;
+}
+
 .card-active svg path:first-child {
     fill: var(--bg-card-dark-active) !important;
 }
@@ -29,11 +38,26 @@ button {
     fill: var(--base-primary-dark-active) !important;
 }
 
+.card-active-light svg path:first-child {
+    fill: var(--bg-card-light-active) !important;
+}
+
+.card-active-light svg path:nth-child(4) {
+    fill: var(--base-primary-dark-active) !important;
+}
+
+.card-active-light svg circle {
+    fill: var(--base-primary-dark-active) !important;
+}
+
+.card-active-light svg rect {
+    fill: var(--base-primary-dark-active) !important;
+}
+
 .buttonThree svg path:first-child,
 .buttonStore svg path:first-child,
 .buttonFire svg path:first-child,
-.buttonCloud svg path:first-child
-{
+.buttonCloud svg path:first-child {
     fill: var(--bg-card-dark)
 }
 
@@ -43,6 +67,42 @@ button {
 .buttonCloud svg path:nth-child(4) {
     fill: var(--base-primary-dark)
 }
+
+.buttonThreeLight svg path:first-child,
+.buttonStoreLight svg path:first-child,
+.buttonFireLight svg path:first-child,
+.buttonCloudLight svg path:first-child {
+    fill: var(--bg-card-light)
+}
+
+.buttonThreeLight svg rect,
+.buttonStoreLight svg rect,
+.buttonFireLight svg rect,
+.buttonCloudLight svg rect {
+    fill: var(--base-primary-light)
+}
+
+.buttonThreeLight svg circle,
+.buttonStoreLight svg circle,
+.buttonFireLight svg circle,
+.buttonCloudLight svg circle {
+    fill: var(--base-primary-light)
+}
+
+.buttonThreeLight svg path:nth-child(4),
+.buttonStoreLight svg path:nth-child(4),
+.buttonFireLight svg path:nth-child(4),
+.buttonCloudLight svg path:nth-child(4) {
+    fill: var(--base-primary-light)
+}
+
+.buttonPlusLight svg path,
+.buttonSubLight svg path,
+.buttonPlayLight svg path,
+.buttonStopLight svg path {
+    fill: var(--base-primary-light)
+}
+
 
 .dark-mode {
     background-color: #121214;
@@ -58,7 +118,7 @@ button {
 
 .container-display {
     font-size: 110px;
-    color: #323238;
+    color: var(--base-primary-light);
 }
 
 .dark-font {
@@ -97,4 +157,24 @@ button {
 .container-icons-display {
     display: flex;
     gap: 4rem;
+}
+
+.volume {
+    appearance: none;
+    width: 90px;
+    height: 4px;
+    border-radius: 2px;
+    position: absolute;
+    top: 117px;
+    right: 27px;
+}
+
+.volume::-webkit-slider-thumb {
+    appearance: none;
+    display: block;
+    width: 17px;
+    height: 17px;
+    background-color: #fff;
+    border-radius: 50%;
+    color: inherit;
 }

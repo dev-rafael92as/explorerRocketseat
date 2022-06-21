@@ -45,7 +45,11 @@ export default function() {
         soundCoffeshop,
         soundForest,
         soundRain,
-        stopSounds
+        stopSounds,
+        forestSounds,
+        coffeshopSounds,
+        rainSounds,
+        fireplaceSounds
     }
 
 }
