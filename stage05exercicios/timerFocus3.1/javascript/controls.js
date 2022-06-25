@@ -8,11 +8,6 @@ export default function Controls({
     buttonStop,
     buttonPlus,
     buttonSub,
-
-    volumeForest,
-    volumeRain,
-    volumeCoffeshop,
-    volumeFireplace
 }) {
 
     function removeActive() {
@@ -27,21 +22,7 @@ export default function Controls({
         buttonCardRain.classList.remove('card-active-light')
     }
 
-    function resetColorsActiveCardsLightMode() {
-        volumeForest.classList.add('volumeLight')
-        volumeRain.classList.add('volumeLight')
-        volumeCoffeshop.classList.add('volumeLight')
-        volumeFireplace.classList.add('volumeLight')
-    }
-
     function reset() {
-    }
-
-    function removeStyleVolumeLight() {
-        volumeForest.classList.remove('volumeLight')
-        volumeRain.classList.remove('volumeLight')
-        volumeCoffeshop.classList.remove('volumeLight')
-        volumeFireplace.classList.remove('volumeLight')
     }
 
     function removeStyleButtonTimerLight () {
@@ -82,8 +63,6 @@ export default function Controls({
     return {
         reset,
         removeActive,
-        resetColorsActiveCardsLightMode,
-        removeStyleVolumeLight,
         removeStyleButtonTimerLight,
         addStyleButtonTimerLight,
         addButtonCardLight,
