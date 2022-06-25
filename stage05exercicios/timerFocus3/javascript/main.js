@@ -2,25 +2,26 @@ import Controls from "./controls.js"
 import { Timer } from "./timer.js"
 import Sounds from "./sounds.js"
 
-let buttonPlay = document.querySelector('.buttonPlay')
-// let buttonPause = document.querySelector('.pauseCountdown')
-let buttonStop = document.querySelector('.buttonStop')
-// let buttonSetting = document.querySelector('.settingCountdown')
-// let buttonStopMusic = document.querySelector('.stopMusic')
-// let buttonStartMusic = document.querySelector('.startMusic')
-let buttonPlus = document.querySelector('.buttonPlus')
-let buttonSub = document.querySelector('.buttonSub')
+let buttonPlay = document.querySelector('.btnPlay')
+let buttonStop = document.querySelector('.btnStop')
+let buttonPlus = document.querySelector('.btnPlus')
+let buttonSub = document.querySelector('.btnSub')
 let minutesDisplay = document.querySelector('.minutes')
 let secondsDisplay = document.querySelector('.seconds')
 
-let buttonCardForest = document.querySelector('.buttonThree')
-let buttonCardRain = document.querySelector('.buttonCloud')
-let buttonCardCoffeshop = document.querySelector('.buttonStore')
-let buttonCardFireplace = document.querySelector('.buttonFire')
+let buttonCardForest = document.querySelector('.btnForest')
+let buttonCardRain = document.querySelector('.btnRain')
+let buttonCardCoffeshop = document.querySelector('.btnCoffeShop')
+let buttonCardFireplace = document.querySelector('.btnFireplace')
 
 let buttonDarkMode = document.querySelector('.dark-mode-button')
 let buttonLightMode = document.querySelector('.light-mode-button')
 let settingBgMode = document.querySelector('.bg-mode')
+
+let volumeForest = document.querySelector('.volForest')
+let volumeRain = document.querySelector('.volRain')
+let volumeCoffeshop = document.querySelector('.volCoffeshop')
+let volumeFireplace = document.querySelector('.volFireplace')
 
 const sound = Sounds()
 
@@ -29,9 +30,16 @@ const controls = Controls({
     buttonCardForest,
     buttonCardFireplace,
     buttonCardRain,
+
     buttonPlay,
-    // buttonSetting,
-    buttonStop
+    buttonStop,
+    buttonPlus,
+    buttonSub,
+
+    volumeForest,
+    volumeRain,
+    volumeCoffeshop,
+    volumeFireplace
 })
 
 const timer = Timer({
@@ -45,37 +53,19 @@ buttonPlay.addEventListener('click', function() {
     sound.pressButton()
 })
 
-// buttonPause.addEventListener('click', function() {
-//     controls.pause()
-//     timer.hold()
-//     sound.pressButton()
-// })
-
 buttonStop.addEventListener('click', function() {
     timer.reset()
     sound.pressButton()
 })
 
 buttonPlus.addEventListener("click", function() {
-    let sum = Number(minutesDisplay.textContent) + 5
-
-    if(sum > 60) {
-        sum = 60
-    } else {
-    document.querySelector('.minutes').textContent = sum
-    minutesDisplay.textContent = sum
-}
+    sound.pressButton()
+    timer.plusTimer()
 })
 
 buttonSub.addEventListener("click", function() {
-    let sub = Number(minutesDisplay.textContent) - 5
-
-    if(sub < 0) {
-        sub = 0
-    } else {
-    document.querySelector('.minutes').textContent = sub
-    minutesDisplay.textContent = sub
-}
+    sound.pressButton()
+    timer.subTimer()
 })
 
 buttonCardCoffeshop.addEventListener('click', function() {
@@ -84,6 +74,8 @@ buttonCardCoffeshop.addEventListener('click', function() {
     controls.removeActive()
     if (buttonCardCoffeshop.classList.contains('buttonStoreLight')) {
         buttonCardCoffeshop.classList.add('card-active-light')
+        controls.resetColorsActiveCardsLightMode()
+        volumeCoffeshop.classList.remove('volumeLight')
     } else {
         buttonCardCoffeshop.classList.add('card-active')
     }
@@ -96,6 +88,8 @@ buttonCardFireplace.addEventListener('click', function() {
     controls.removeActive()
     if (buttonCardFireplace.classList.contains('buttonFireLight')) {
         buttonCardFireplace.classList.add('card-active-light')
+        controls.resetColorsActiveCardsLightMode()
+        volumeFireplace.classList.remove('volumeLight')
     } else {
         buttonCardFireplace.classList.add('card-active')
     }
@@ -108,6 +102,8 @@ buttonCardForest.addEventListener('click', function() {
     controls.removeActive()
     if (buttonCardForest.classList.contains('buttonThreeLight')) {
         buttonCardForest.classList.add('card-active-light')
+        controls.resetColorsActiveCardsLightMode()
+        volumeForest.classList.remove('volumeLight')
     } else {
         buttonCardForest.classList.add('card-active')
     }
@@ -120,6 +116,8 @@ buttonCardRain.addEventListener('click', function() {
     controls.removeActive()
     if (buttonCardRain.classList.contains('buttonCloudLight')) {
         buttonCardRain.classList.add('card-active-light')
+        controls.resetColorsActiveCardsLightMode()
+        volumeRain.classList.remove('volumeLight')
     } else {
         buttonCardRain.classList.add('card-active')
     }
@@ -135,20 +133,16 @@ buttonDarkMode.addEventListener('click', function() {
 
     document.querySelector('.container-display').classList.remove('dark-font')
 
-    buttonCardForest.classList.add('buttonThreeLight')
-    buttonCardCoffeshop.classList.add('buttonStoreLight')
-    buttonCardFireplace.classList.add('buttonFireLight')
-    buttonCardRain.classList.add('buttonCloudLight')
-
-    buttonPlay.classList.add('buttonPlayLight')
-    buttonStop.classList.add('buttonStopLight')
-    buttonPlus.classList.add('buttonPlusLight')
-    buttonSub.classList.add('buttonSubLight')
+    controls.addButtonCardLight()
+    controls.addStyleButtonTimerLight()
+    controls.resetColorsActiveCardsLightMode()
+    
 
     switch (buttonCardForest.classList.contains('card-active')) {
         case true:
             buttonCardForest.classList.remove('card-active')
             buttonCardForest.classList.add('card-active-light')
+            volumeForest.classList.remove('volumeLight')
             break;
         default:
             break;
@@ -158,6 +152,7 @@ buttonDarkMode.addEventListener('click', function() {
         case true:
             buttonCardFireplace.classList.remove('card-active')
             buttonCardFireplace.classList.add('card-active-light')
+            volumeFireplace.classList.remove('volumeLight')
             break;
         default:
             break;
@@ -167,6 +162,7 @@ buttonDarkMode.addEventListener('click', function() {
         case true:
             buttonCardCoffeshop.classList.remove('card-active')
             buttonCardCoffeshop.classList.add('card-active-light')
+            volumeCoffeshop.classList.remove('volumeLight')
             break;
         default:
             break;
@@ -176,6 +172,7 @@ buttonDarkMode.addEventListener('click', function() {
         case true:
             buttonCardRain.classList.remove('card-active')
             buttonCardRain.classList.add('card-active-light')
+            volumeRain.classList.remove('volumeLight')
             break;
         default:
             break;
@@ -191,15 +188,11 @@ buttonLightMode.addEventListener('click', function() {
 
     document.querySelector('.container-display').classList.add('dark-font')
 
-    buttonCardForest.classList.remove('buttonThreeLight')
-    buttonCardCoffeshop.classList.remove('buttonStoreLight')
-    buttonCardFireplace.classList.remove('buttonFireLight')
-    buttonCardRain.classList.remove('buttonCloudLight')
-
-    buttonPlay.classList.remove('buttonPlayLight')
-    buttonStop.classList.remove('buttonStopLight')
-    buttonPlus.classList.remove('buttonPlusLight')
-    buttonSub.classList.remove('buttonSubLight')
+    controls.removeButtonCardLight()
+    controls.addButtonCard()
+    controls.removeStyleButtonTimerLight()
+    controls.removeStyleVolumeLight()
+    
 
     switch (buttonCardForest.classList.contains('card-active-light')) {
         case true:
@@ -238,11 +231,6 @@ buttonLightMode.addEventListener('click', function() {
     }
 })
 
-let volumeForest = document.querySelector('.volForest')
-let volumeRain = document.querySelector('.volRain')
-let volumeCoffeshop = document.querySelector('.volCoffeshop')
-let voluemFireplace = document.querySelector('.volFireplace')
-
 volumeForest.addEventListener('click', function() {
     let valueVolume = volumeForest.value / 100
     sound.forestSounds.volume = valueVolume
@@ -258,31 +246,7 @@ volumeCoffeshop.addEventListener('click', function() {
     sound.coffeshopSounds.volume = valueVolume
 })
 
-voluemFireplace.addEventListener('click', function() {
-    let valueVolume = voluemFireplace.value / 100
+volumeFireplace.addEventListener('click', function() {
+    let valueVolume = volumeFireplace.value / 100
     sound.fireplaceSounds.volume = valueVolume
 })
-
-// buttonStopMusic.addEventListener('click', function() {
-//     buttonStopMusic.classList.add('hide')
-//     buttonStartMusic.classList.remove('hide')
-//     sound.bgAudio.pause()
-// })
-
-// buttonStartMusic.addEventListener('click', function() {
-//     buttonStartMusic.classList.add('hide')
-//     buttonStopMusic.classList.remove('hide')
-//     sound.bgAudio.play()
-// })
-
-// buttonSetting.addEventListener('click', function() {
-//     let newMinutes = controls.getMinutes()
-
-//     if(!newMinutes) {
-//         timer.reset()
-//         return
-//     }
-
-//     timer.updateTimerDisplay(newMinutes, 0)
-//     timer.updateMinutes(newMinutes)
-// })

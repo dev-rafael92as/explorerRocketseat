@@ -24,6 +24,7 @@ button {
     border: none;
     background: none;
     cursor: pointer;
+    transition: all .3s ease-in-out;
 }
 
 .buttonContainer {
@@ -32,26 +33,22 @@ button {
 
 .card-active svg path:first-child {
     fill: var(--bg-card-dark-active) !important;
+    transition: all .3s ease-in-out;
 }
 
-.card-active svg path:nth-child(4) {
+.card-active svg path:nth-child(2) {
     fill: var(--base-primary-dark-active) !important;
+    transition: all .3s ease-in-out;
 }
 
 .card-active-light svg path:first-child {
     fill: var(--bg-card-light-active) !important;
+    transition: all .3s ease-in-out;
 }
 
-.card-active-light svg path:nth-child(4) {
+.card-active-light svg path:nth-child(2) {
     fill: var(--base-primary-dark-active) !important;
-}
-
-.card-active-light svg circle {
-    fill: var(--base-primary-dark-active) !important;
-}
-
-.card-active-light svg rect {
-    fill: var(--base-primary-dark-active) !important;
+    transition: all .3s ease-in-out;
 }
 
 .buttonThree svg path:first-child,
@@ -61,10 +58,10 @@ button {
     fill: var(--bg-card-dark)
 }
 
-.buttonThree svg path:nth-child(4),
-.buttonStore svg path:nth-child(4),
-.buttonFire svg path:nth-child(4),
-.buttonCloud svg path:nth-child(4) {
+.buttonThree svg path:nth-child(2),
+.buttonStore svg path:nth-child(2),
+.buttonFire svg path:nth-child(2),
+.buttonCloud svg path:nth-child(2) {
     fill: var(--base-primary-dark)
 }
 
@@ -75,24 +72,10 @@ button {
     fill: var(--bg-card-light)
 }
 
-.buttonThreeLight svg rect,
-.buttonStoreLight svg rect,
-.buttonFireLight svg rect,
-.buttonCloudLight svg rect {
-    fill: var(--base-primary-light)
-}
-
-.buttonThreeLight svg circle,
-.buttonStoreLight svg circle,
-.buttonFireLight svg circle,
-.buttonCloudLight svg circle {
-    fill: var(--base-primary-light)
-}
-
-.buttonThreeLight svg path:nth-child(4),
-.buttonStoreLight svg path:nth-child(4),
-.buttonFireLight svg path:nth-child(4),
-.buttonCloudLight svg path:nth-child(4) {
+.buttonThreeLight svg path:nth-child(2),
+.buttonStoreLight svg path:nth-child(2),
+.buttonFireLight svg path:nth-child(2),
+.buttonCloudLight svg path:nth-child(2) {
     fill: var(--base-primary-light)
 }
 
@@ -106,10 +89,12 @@ button {
 
 .dark-mode {
     background-color: #121214;
+    transition: all .5s ease-in-out;
 }
 
 .light-mode {
     background-color: #FFFFFF;
+    transition: all .5s ease-in-out;
 }
 
 .container-left {
@@ -123,10 +108,12 @@ button {
 
 .dark-font {
     color: #FFFFFF;
+    transition: all .3s ease-in-out;
 }
 
 .hide {
     display: none;
+    transition: all .3s ease-in-out;
 }
 
 .mode-container {
@@ -167,6 +154,12 @@ button {
     position: absolute;
     top: 117px;
     right: 27px;
+    transition: all .3s ease-in-out;
+}
+
+.volumeLight {
+    background-color: var(--base-primary-light);
+    transition: all .3s ease-in-out;
 }
 
 .volume::-webkit-slider-thumb {
@@ -177,4 +170,24 @@ button {
     background-color: #fff;
     border-radius: 50%;
     color: inherit;
+    transition: all .3s ease-in-out;
+}
+
+.volumeLight::-webkit-slider-thumb {
+    background-color: var(--base-primary-light);
+    transition: all .3s ease-in-out;
+}
+
+@media (max-width: 950px) {
+    .mode-container {
+        flex-direction: column;
+        max-width: 450px;
+        margin-top: 10rem;
+        gap: 5rem;
+    }
+
+    .dark-mode-button, .light-mode-button {
+        right: 20px;
+        top: 20px;
+    }
 }

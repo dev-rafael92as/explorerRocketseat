@@ -56,11 +56,37 @@ export function Timer({
         clearTimeout(timerTimeOut)
     }
 
+    function plusTimer() {
+        let sum = Number(minutesDisplay.textContent) + 5
+
+        if(sum > 60) {
+            sum = 60
+        } else {
+            let newSum = sum.toString().padStart(2, '0')
+            minutesDisplay.textContent = newSum
+            minutesDisplay.textContent = String(newMinutes).padStart(2, '0')
+        }
+    }
+
+    function subTimer() {
+        let sub = Number(minutesDisplay.textContent) - 5
+
+        if(sub < 0) {
+            sub = 0
+        } else {
+        let newSub = sub.toString().padStart(2, '0')
+        minutesDisplay.textContent = newSub
+        minutesDisplay.textContent = String(newMinutes).padStart(2, '0')
+        }
+    }
+
     return {
         countdown,
         reset,
         updateTimerDisplay,
         updateMinutes,
-        hold
+        hold,
+        plusTimer,
+        subTimer
     }
 }
