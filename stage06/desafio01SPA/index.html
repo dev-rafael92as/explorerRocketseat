@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <title>Desafio SPA</title>
+    </head>
+    <body>
+        <header>
+            <img src="./assets/logo.svg" alt="Logotipo Universp">
+            <nav>
+                <a class="homeLink active" href="/" onclick="route(), activeHome()">Home</a>
+                <a class="universeLink" href="/universo" onclick="route(), activeUniverse()">O Universo</a>
+                <a class="explorerLink" href="/exploracao" onclick="route(), activeExplorer()">Exploração</a>
+            </nav>
+            <button class="menuMobile"></button>
+        </header>
+
+        <div id="app"></div>
+
+        <script src="./js/index.js" type="module"></script>
+        <script src="./js/active.js"></script>
+    </body>
+</html>
