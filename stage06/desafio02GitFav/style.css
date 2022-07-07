@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@400;700&display=swap');
 
 :root {
     font-size: 62.5%;
 
     --ff-primary: 'Roboto', sans-serif;
+    --ff-Roboto-Mono: 'Roboto Mono', monospace;
 
     --bg-primary: #2F2F33;
     --fc-remove: #F75A68;
     --fc-placeholder: #7C7C8A;
     --fc-primary: #FFFFFF;
 
-    --base-color: 191;
+    --base-color: 190;
     --fc-base-input: hsla(var(--base-color), 65%, 7%, 1);
     --fc-base-thead-line: hsla(var(--base-color), 72%, 13%, 1);
     --fc-base-line: hsla(var(--base-color), 61%, 6%, 0.5);
@@ -28,6 +29,11 @@ body {
     font-family: var(--ff-primary);
     background-color: var(--bg-primary);
 }
+
+button, input {
+    font-family: var(--ff-primary);
+}
+
 .page {
     margin: 0 auto;
     max-width: 112.0rem;
@@ -50,12 +56,13 @@ header {
     justify-content: space-between;
     align-items: baseline;
     margin-top: 11.5rem;
+    margin-bottom: 8.7rem;
     height: 4.8rem;
 }
 
 .container-add-fav {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 8px;
     width: 64rem;
 }
@@ -70,4 +77,138 @@ header input {
     background-color: var(--fc-base-input);
     border: none;
     border-radius: 5px;
+}
+
+header button {
+    padding: 1.2rem 3.2rem;
+    height: 4.8rem;
+    background-color: var(--fc-base-button);
+    border: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+header button:hover {
+    opacity: .7;
+}
+
+table {
+    border-radius: 1.2rem;
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 100%;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-family: var(--ff-primary);
+}
+
+thead {
+    width: 100%;
+}
+
+thead tr th:first-child{
+    width: 46%;
+    border-top-left-radius: 1.2rem;
+    text-align: start;
+    padding-left: 4rem;
+}
+
+thead tr th:nth-child(2) {
+    width: 19%;
+    text-align: start;
+    padding-left: 4rem;
+}
+
+thead tr th:nth-child(3) {
+    width: 19%;
+    text-align: start;
+    padding-left: 4rem;
+}
+
+thead tr th:nth-child(4) {
+    width: 16%;
+    border-top-right-radius: 1.2rem;
+    text-align: start;
+    padding-left: 4rem;
+}
+
+table thead tr {
+    background-color: var(--fc-base-thead-line);
+    height: 64px;
+}
+
+tbody tr td {
+    height: 10.4rem;
+    padding-left: 4rem;
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: var(--fc-base-line);
+}
+
+tbody tr:nth-child(even) td {
+    background-color: var(--fc-base-input)
+}
+
+tbody tr td:first-child {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem; 
+}
+
+tbody tr td:first-child p:last-child {
+    font-weight: 400;
+}
+
+tbody tr td:last-child span{
+    color: var(--fc-remove);
+    cursor: pointer;
+}
+
+tbody img {
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 100%;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 1.4rem;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 1.4rem;
+}
+
+tbody tr.noFav td {
+    display: table-cell;
+    height: 62.4rem;
+}
+
+.noFav div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+}
+
+.noFav div h3 {
+    font-family: var(--ff-Roboto-Mono);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 25px;
+    color: var(--fc-placeholder);
+}
+
+.hide {
+    display: none;
 }
