@@ -147,6 +147,10 @@ table thead tr {
     height: 64px;
 }
 
+tbody {
+    
+}
+
 tbody tr td {
     height: 10.4rem;
     padding-left: 4rem;
@@ -212,3 +216,27 @@ tbody tr.noFav td {
 .hide {
     display: none;
 }
+
+div.tablecontainer {
+    width: 100%;
+    border: 1px solid #4A808C;
+    border-radius: 1.2rem;
+    overflow-y: overlay;
+    max-height: 59rem;
+    min-width: 85rem;
+  }
+  
+  div.tablecontainer::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+  
+  div.tablecontainer::-webkit-scrollbar-track {
+    border-radius: 0.3rem;
+    background: transparent;
+  }
+  
+  div.tablecontainer::-webkit-scrollbar-thumb {
+  
+    background: #4A808C;
+    border-radius: 0.3rem;  
+  }
